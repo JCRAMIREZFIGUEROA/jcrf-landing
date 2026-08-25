@@ -1,0 +1,41 @@
+backend:
+  name: github
+  repo: JCRAMIREZFIGUEROA/jcrf-landing
+  branch: master
+  # Sitio de un solo usuario -> no hace falta proxy OAuth (sveltia-cms-auth).
+  # Al entrar a /admin/, Sveltia pide un Personal Access Token de GitHub
+  # (Settings > Developer settings > Personal access tokens, permiso "repo").
+
+# "Privado" = borrador. Un post nuevo o editado se guarda en una rama/PR
+# aparte y NO queda visible en el sitio hasta apretar "Publish" en el CMS.
+publish_mode: editorial_workflow
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "posts"
+    label: "Blog"
+    label_singular: "Post"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    sortable_fields: ["date", "title"]
+    fields:
+      - { label: "Titulo", name: "title", widget: "string" }
+      - { label: "Fecha", name: "date", widget: "datetime", format: "YYYY-MM-DD", picker_utc: true }
+      - { label: "Tags", name: "tags", widget: "list", default: [] }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+
+  - name: "pages"
+    label: "Paginas"
+    files:
+      - label: "Portada"
+        name: "about"
+        file: "_pages/about.md"
+        fields:
+          - { label: "Titulo", name: "title", widget: "string" }
+          - { label: "Permalink", name: "permalink", widget: "hidden", default: "/" }
+          - { label: "Author profile", name: "author_profile", widget: "hidden", default: true }
+          - { label: "Redirect from", name: "redirect_from", widget: "hidden", required: false }
+          - { label: "Contenido", name: "body", widget: "markdown" }

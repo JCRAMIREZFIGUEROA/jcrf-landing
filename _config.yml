@@ -299,7 +299,7 @@ sass:
 
 
 # Outputting
-permalink: /:categories/:title/
+permalink: /posts/:year/:month/:day/:title/ # URL limpia automatica para posts nuevos (no hace falta escribirla a mano en el CMS)
 # paginate: 5 # amount of posts to show
 # paginate_path: /page:num/
 timezone: Etc/UTC # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
