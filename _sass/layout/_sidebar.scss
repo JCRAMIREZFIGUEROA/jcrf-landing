@@ -155,12 +155,8 @@
 
   img {
     max-width: 175px;
-    border-radius: 50%;
-
-    @include breakpoint($large) {
-      padding: 5px;
-      border: 1px solid var(--global-border-color);
-    }
+    // Recorte estilo askell.io: esquinas suavemente redondeadas, no circulo.
+    border-radius: 5%;
   }
 }
 
