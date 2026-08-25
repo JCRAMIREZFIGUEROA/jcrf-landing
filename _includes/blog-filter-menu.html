@@ -49,13 +49,15 @@
     cursor: pointer;
   }
   .blog-filter__panel {
-    display: flex;
     gap: 2.5em;
     flex-wrap: wrap;
     margin-top: 0.75em;
     padding: 1em 1.25em;
     border: 1px solid var(--global-border-color, #ccc);
     border-radius: 4px;
+  }
+  .blog-filter__panel:not([hidden]) {
+    display: flex;
   }
   .blog-filter__col h4 { margin: 0 0 0.4em 0; }
   .blog-filter__col ul { list-style: none; margin: 0; padding: 0; max-height: 260px; overflow-y: auto; }
