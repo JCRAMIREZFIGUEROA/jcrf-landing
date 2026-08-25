@@ -1,5 +1,5 @@
 # Titulo y descripcion del sitio. Editable desde /admin/ (coleccion "Titulo del sitio").
 # Separado de _config.yml a proposito: ese archivo tiene configuracion tecnica
 # (plugins, permalinks, colecciones) que no debe poder pisarse desde el editor.
-title: "[PENDIENTE: nombre/titulo por definir]"
-description: "Sitio de prueba - Fase 1 (contenido real pendiente de confirmar)"
+title: "Juan Carlos Ramirez Figueroa"
+description: "[PENDIENTE: linea de descripcion pendiente de confirmar]"

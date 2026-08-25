@@ -2,17 +2,18 @@
 # sin tocar este archivo a mano. La clave "jcrf" se referencia desde
 # _config.yml (defaults) para que todas las paginas y posts la usen.
 jcrf:
-  name: "[PENDIENTE]"
+  name: "Juan Carlos Ramirez Figueroa"
   avatar: "profile.png"
   pronouns:
   bio: "[PENDIENTE: descripcion pendiente de confirmar]"
   location:
   employer:
   uri:
-  email:
+  email: "jcramirezfigueroa@gmail.com"
   github:
-  linkedin:
+  linkedin: "jcramirezfigueroa"
   twitter:
   bluesky:
   googlescholar:
   orcid:
+  researchgate: "https://www.researchgate.net/profile/Juan-Ramirez-Figueroa"
