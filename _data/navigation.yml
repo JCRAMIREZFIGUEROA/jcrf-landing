@@ -23,8 +23,26 @@ main:
   # - title: "Portfolio"
   #   url: /portfolio/
 
+  - title: "Periodismo"
+    url: https://jcrfarchivos.wordpress.com/
+
+  - title: "Academia"
+    url: https://www.researchgate.net/profile/Juan-Ramirez-Figueroa
+
+  - title: "La Siderurgica"
+    url: https://lasiderurgica.beehiiv.com/
+
+  - title: "Jardin digital"
+    url: https://lab.jcramirezfigueroa.com
+
+  - title: "Archivo"
+    url: https://archivo.jcramirezfigueroa.com
+
   - title: "Blog"
     url: /year-archive/
+
+  - title: "Contacto"
+    url: mailto:jcramirezfigueroa@gmail.com
 
   # - title: "CV"
   #   url: /cv/

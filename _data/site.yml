@@ -3,3 +3,6 @@
 # (plugins, permalinks, colecciones) que no debe poder pisarse desde el editor.
 title: "Juan Carlos Ramirez Figueroa"
 description: "[PENDIENTE: linea de descripcion pendiente de confirmar]"
+# Estilo askell.io: sin foto en la barra lateral, la foto va dentro del
+# cuerpo de la Portada (_pages/about.md), mas abajo.
+hide_sidebar_avatar: true

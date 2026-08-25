@@ -9,7 +9,7 @@
             <a href="{{ base_path }}/">{{ site.data.site.title | default: site.title }}</a>
           </li>
           {% for link in site.data.navigation.main %}
-            {% if link.url contains 'http' %}
+            {% if link.url contains 'http' or link.url contains 'mailto:' %}
               {% assign domain = '' %}
             {% else %}
               {% assign domain = base_path %}
