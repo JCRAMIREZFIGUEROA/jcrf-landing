@@ -7,6 +7,10 @@
 # server process.
 
 # Basic Site Settings
+# NOTA: title/name/description/author de aqui abajo quedaron sin uso real.
+# El titulo/descripcion editable desde /admin/ vive en _data/site.yml, y los
+# datos del autor en _data/authors.yml. Estos campos solo quedan como
+# respaldo tecnico (fallback) si esos archivos llegaran a faltar.
 locale                   : "en-US"
 site_theme               : "default" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
 title                    : "[PENDIENTE: nombre/titulo por definir]"
@@ -243,6 +247,7 @@ defaults:
       type: posts
     values:
       layout: single
+      author: jcrf # ver _data/authors.yml (editable desde /admin/)
       author_profile: true
       read_time: true
       comments: true
@@ -254,6 +259,7 @@ defaults:
       type: pages
     values:
       layout: single
+      author: jcrf # ver _data/authors.yml (editable desde /admin/)
       author_profile: true
   # _teaching
   - scope:

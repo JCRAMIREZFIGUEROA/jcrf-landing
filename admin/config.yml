@@ -39,3 +39,53 @@ collections:
           - { label: "Author profile", name: "author_profile", widget: "hidden", default: true }
           - { label: "Redirect from", name: "redirect_from", widget: "hidden", required: false }
           - { label: "Contenido", name: "body", widget: "markdown" }
+
+  - name: "site"
+    label: "Titulo del sitio"
+    files:
+      - label: "General"
+        name: "site"
+        file: "_data/site.yml"
+        fields:
+          - { label: "Titulo / nombre del sitio", name: "title", widget: "string" }
+          - { label: "Descripcion corta", name: "description", widget: "string" }
+
+  - name: "author"
+    label: "Autor / Contacto"
+    files:
+      - label: "Datos del autor"
+        name: "jcrf"
+        file: "_data/authors.yml"
+        fields:
+          - label: "jcrf"
+            name: "jcrf"
+            widget: "object"
+            fields:
+              - { label: "Nombre", name: "name", widget: "string" }
+              - { label: "Foto (archivo en /images/)", name: "avatar", widget: "string" }
+              - { label: "Pronombres", name: "pronouns", widget: "string", required: false }
+              - { label: "Bio", name: "bio", widget: "text", required: false }
+              - { label: "Ubicacion", name: "location", widget: "string", required: false }
+              - { label: "Rol / institucion", name: "employer", widget: "string", required: false }
+              - { label: "Sitio web (URL)", name: "uri", widget: "string", required: false }
+              - { label: "Email", name: "email", widget: "string", required: false }
+              - { label: "GitHub (usuario)", name: "github", widget: "string", required: false }
+              - { label: "LinkedIn (usuario)", name: "linkedin", widget: "string", required: false }
+              - { label: "Twitter/X (usuario)", name: "twitter", widget: "string", required: false }
+              - { label: "Bluesky (usuario)", name: "bluesky", widget: "string", required: false }
+              - { label: "Google Scholar (URL)", name: "googlescholar", widget: "string", required: false }
+              - { label: "ORCID (URL)", name: "orcid", widget: "string", required: false }
+
+  - name: "navigation"
+    label: "Secciones del menu"
+    files:
+      - label: "Menu principal"
+        name: "navigation"
+        file: "_data/navigation.yml"
+        fields:
+          - label: "Enlaces"
+            name: "main"
+            widget: "list"
+            fields:
+              - { label: "Titulo", name: "title", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
