@@ -9,4 +9,4 @@ redirect_from:
 
 **[PENDIENTE: falta la linea de descripcion/bio — Juan Carlos la escribe directamente cuando quiera, aqui o desde /admin/.]**
 
-![Juan Carlos Ramirez Figueroa]({{ site.baseurl }}/images/profile.png)
+<img src="{{ site.baseurl }}/images/profile.png" alt="Juan Carlos Ramirez Figueroa" style="width: 50%;">
