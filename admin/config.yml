@@ -6,9 +6,8 @@ backend:
   # Al entrar a /admin/, Sveltia pide un Personal Access Token de GitHub
   # (Settings > Developer settings > Personal access tokens, permiso "repo").
 
-# "Privado" = borrador. Un post nuevo o editado se guarda en una rama/PR
-# aparte y NO queda visible en el sitio hasta apretar "Publish" en el CMS.
-publish_mode: editorial_workflow
+# Modo simple: guardar = publicar directo (igual que en archivo.jcramirezfigueroa.com).
+# No hay borradores ni paso extra de "Publish": lo que guardas queda en vivo al toque.
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
