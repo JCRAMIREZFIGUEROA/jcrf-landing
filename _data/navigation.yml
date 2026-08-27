@@ -7,3 +7,5 @@ main:
     url: https://archivo.jcramirezfigueroa.com
   - title: Blog
     url: /year-archive/
+  - title: Publicaciones
+    url: /publications/
