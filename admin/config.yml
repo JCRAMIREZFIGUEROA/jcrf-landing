@@ -27,6 +27,32 @@ collections:
       - { label: "Tags", name: "tags", widget: "list", default: [] }
       - { label: "Contenido", name: "body", widget: "markdown" }
 
+  - name: "publications"
+    label: "Publicaciones"
+    label_singular: "Publicacion"
+    folder: "_publications"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    sortable_fields: ["date", "title"]
+    fields:
+      - { label: "Titulo", name: "title", widget: "string" }
+      - { label: "Fecha", name: "date", widget: "datetime", format: "YYYY-MM-DD", picker_utc: true }
+      - { label: "Medio / revista / conferencia", name: "venue", widget: "string" }
+      - label: "Categoria"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Articulo de revista", value: "manuscripts" }
+          - { label: "Paper de conferencia", value: "conferences" }
+          - { label: "Libro / capitulo", value: "books" }
+      - label: "Link al paper (el titulo de la publicacion va a apuntar aqui)"
+        name: "link"
+        widget: "string"
+        hint: "URL externa: arXiv, la pagina de la revista, un PDF alojado en otro lado, etc."
+      - { label: "Resumen breve (opcional)", name: "excerpt", widget: "text", required: false }
+      - { label: "Cita formal (opcional)", name: "citation", widget: "text", required: false }
+      - { label: "Notas extra (opcional, no se muestran en el listado)", name: "body", widget: "markdown", required: false }
+
   - name: "pages"
     label: "Paginas"
     files:
