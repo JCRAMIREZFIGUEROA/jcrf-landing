@@ -41,6 +41,16 @@ collections:
       - { label: "Fecha", name: "date", widget: "datetime", format: "YYYY-MM-DD", picker_utc: true }
       - { label: "Tags", name: "tags", widget: "list", default: [] }
       - { label: "Contenido", name: "body", widget: "markdown" }
+      - label: "Galeria de imagenes (opcional)"
+        name: "gallery"
+        widget: "list"
+        required: false
+        label_singular: "Imagen"
+        summary: "{{fields.image}}"
+        hint: "Secuencia de fotos que se muestra DESPUES del texto. Arrastra para reordenar. Para una foto en medio del texto, usala dentro de Contenido."
+        fields:
+          - { label: "Imagen", name: "image", widget: "image" }
+          - { label: "Texto alternativo (opcional)", name: "alt", widget: "string", required: false }
 
   - name: "publications"
     label: "Publicaciones"

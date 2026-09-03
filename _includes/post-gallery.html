@@ -1,0 +1,24 @@
+{% comment %}
+  Galeria de imagenes de un post/pagina.
+  Se llena desde el panel /admin/ (campo "Galeria de imagenes", lista
+  reordenable). Se muestra despues del texto, en el layout single.html.
+  Usa relative_url para que las rutas funcionen tanto en la URL de prueba
+  (con baseurl /jcrf-landing) como en el dominio final.
+{% endcomment %}
+{% if page.gallery and page.gallery.size > 0 %}
+  <div class="post-gallery">
+    {% for item in page.gallery %}
+      {% if item.image and item.image != "" %}
+        {% if item.image contains "://" %}
+          {% assign gallery_src = item.image %}
+        {% else %}
+          {% assign gallery_src = item.image | relative_url %}
+        {% endif %}
+        <img src="{{ gallery_src }}"
+             alt="{{ item.alt | default: '' | escape }}"
+             loading="lazy"
+             style="display:block;width:100%;height:auto;margin:0.75rem 0;border-radius:4px;">
+      {% endif %}
+    {% endfor %}
+  </div>
+{% endif %}
