@@ -1,0 +1,4 @@
+# Carpeta de medios del panel (Sveltia CMS).
+# media_folder en admin/config.yml apunta aca.
+# Este archivo existe solo para que la carpeta este presente en el repo
+# aunque todavia no tenga imagenes.
