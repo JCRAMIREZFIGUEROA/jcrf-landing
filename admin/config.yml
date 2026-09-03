@@ -12,6 +12,22 @@ backend:
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
+# Optimizacion automatica de imagenes AL SUBIR (lo hace el navegador antes de
+# guardar en GitHub). Evita que una captura de pantalla de 3 MB entre tal cual:
+# se convierte a WebP, se achica a 1800 px de ancho como maximo y se comprime.
+# Resultado tipico: ~100-250 KB por imagen. Esto mantiene el editor rapido y
+# el repo liviano. Para volver atras, borra este bloque "media_libraries".
+media_libraries:
+  default:
+    config:
+      transformations:
+        raster_image:
+          format: webp
+          quality: 82
+          width: 1800
+        svg:
+          optimize: true
+
 collections:
   - name: "posts"
     label: "Blog"
