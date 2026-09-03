@@ -1,10 +1,10 @@
 ---
-title: 'Post de prueba — borrar'
+title: Post de prueba — borrar
 date: 2026-08-24
-permalink: /posts/2026/08/post-de-prueba-uno/
 tags:
   - prueba
   - fase-1
+permalink: /posts/2026/08/post-de-prueba-uno/
 ---
 
 Este es un post de prueba con contenido inventado. Se usa unicamente para
