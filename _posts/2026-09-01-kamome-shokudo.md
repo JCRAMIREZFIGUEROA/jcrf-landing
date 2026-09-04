@@ -5,5 +5,7 @@ tags:
   - veo
 gallery:
   - image: /images/uploads/kamome-shokudo-1.jpg
+    alt: ''
   - image: /images/uploads/kamome-shokudo-2.jpg
+    alt: ''
 ---
