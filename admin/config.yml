@@ -39,8 +39,9 @@ collections:
     fields:
       - { label: "Titulo", name: "title", widget: "string" }
       - { label: "Fecha", name: "date", widget: "datetime", format: "YYYY-MM-DD", picker_utc: true }
-      - { label: "Tags", name: "tags", widget: "list", default: [] }
-      - { label: "Contenido", name: "body", widget: "markdown" }
+      - { label: "Tags", name: "tags", widget: "list", default: [], required: false }
+      # required: false -> un post puede ser solo texto, solo galeria de fotos, o las dos cosas.
+      - { label: "Contenido", name: "body", widget: "markdown", required: false }
       - label: "Galeria de imagenes (opcional)"
         name: "gallery"
         widget: "list"
