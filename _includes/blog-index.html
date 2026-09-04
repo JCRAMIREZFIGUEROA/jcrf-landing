@@ -1,0 +1,141 @@
+{% comment %}
+  Indice pegajoso del Blog: se mantiene visible mientras se hace scroll
+  por la lista de posts (a la derecha) y resalta el año que se esta
+  leyendo. Reemplaza al viejo boton "Explorar por ano/tema" que habia
+  que abrir a mano.
+{% endcomment %}
+<nav class="blog-index" aria-label="Indice del blog">
+  {% assign years = "" | split: "" %}
+  {% for post in site.posts %}
+    {% assign y = post.date | date: "%Y" %}
+    {% unless years contains y %}
+      {% assign years = years | push: y %}
+    {% endunless %}
+  {% endfor %}
+  <p class="blog-index__label">Años</p>
+  <ul class="blog-index__list">
+    {% for y in years %}
+      <li>
+        <a href="#y-{{ y }}" data-year="{{ y }}">
+          <span class="blog-index__bar" aria-hidden="true"></span>{{ y }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+  <a class="blog-index__tags-link" href="{{ site.baseurl }}/tags/">Por tema →</a>
+</nav>
+
+<style>
+  .blog-layout {
+    display: grid;
+    grid-template-columns: 84px minmax(0, 1fr);
+    gap: 2em;
+    align-items: start;
+  }
+  .blog-index {
+    position: sticky;
+    top: 1em;
+  }
+  .blog-index__label {
+    font-size: 0.75em;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--global-text-color-light);
+    margin: 0 0 0.5em;
+  }
+  .blog-index__list {
+    list-style: none;
+    margin: 0 0 1em;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .blog-index__list a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9em;
+    line-height: 1.7;
+    color: var(--global-text-color-light);
+    text-decoration: none;
+  }
+  .blog-index__bar {
+    width: 2px;
+    height: 16px;
+    border-radius: 1px;
+    background: transparent;
+    flex-shrink: 0;
+  }
+  .blog-index__list a.is-active {
+    color: var(--global-text-color);
+    font-weight: bold;
+  }
+  .blog-index__list a.is-active .blog-index__bar {
+    background: currentColor;
+  }
+  .blog-index__tags-link {
+    display: block;
+    font-size: 0.8em;
+    color: var(--global-text-color-light);
+  }
+
+  @media (max-width: 768px) {
+    .blog-layout {
+      grid-template-columns: 1fr;
+    }
+    .blog-index {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--global-bg-color);
+      padding: 0.6em 0;
+      margin-bottom: 1em;
+      border-bottom: 1px solid var(--global-border-color);
+    }
+    .blog-index__label {
+      display: none;
+    }
+    .blog-index__list {
+      flex-direction: row;
+      overflow-x: auto;
+      gap: 1.25em;
+      -webkit-overflow-scrolling: touch;
+    }
+    .blog-index__list a {
+      white-space: nowrap;
+    }
+    .blog-index__tags-link {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var links = document.querySelectorAll(".blog-index__list a");
+    var headings = document.querySelectorAll(".blog-year-heading");
+    if (!links.length || !headings.length) return;
+
+    var setActive = function (year) {
+      links.forEach(function (a) {
+        a.classList.toggle("is-active", a.dataset.year === year);
+      });
+    };
+    setActive(headings[0].dataset.year);
+
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            setActive(entry.target.dataset.year);
+          }
+        });
+      },
+      { rootMargin: "-10% 0px -80% 0px" }
+    );
+    headings.forEach(function (h) {
+      observer.observe(h);
+    });
+  });
+</script>
