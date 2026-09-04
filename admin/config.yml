@@ -90,6 +90,7 @@ collections:
           - { label: "Permalink", name: "permalink", widget: "hidden", default: "/" }
           - { label: "Author profile", name: "author_profile", widget: "hidden", default: true }
           - { label: "Redirect from", name: "redirect_from", widget: "hidden", required: false }
+          - { label: "Mostrar el feed del blog debajo (portada = intro + blog en scroll)", name: "show_blog_feed", widget: "boolean", default: true }
           - { label: "Contenido", name: "body", widget: "markdown" }
 
   - name: "site"
