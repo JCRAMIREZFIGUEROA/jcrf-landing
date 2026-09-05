@@ -36,9 +36,12 @@ $sidebar-screen-min-width   : 1024px;
     --global-code-background-color      : #fafafa;
     --global-code-text-color            : #{$darker-gray};
     --global-fig-caption-color          : mix(#fff,  #{$dark-gray}, 25%);
-    --global-link-color                 : #52adc8;
-    --global-link-color-hover           : mix(#000, #2f7f93, 25%);
-    --global-link-color-visited         : mix(#fff, #2f7f93, 25%);  
+    /* Links del mismo color que el texto (subrayados via .page__content/.archive a),
+       en vez del celeste de fabrica del tema. El color de acento queda para
+       hover, no para el estado normal -> look editorial, no "link azul". */
+    --global-link-color                 : var(--global-text-color);
+    --global-link-color-hover           : #{$primary-color};
+    --global-link-color-visited         : var(--global-text-color-light);
     --global-masthead-link-color        : #{$dark-gray};
     --global-masthead-link-color-hover  : mix(#000, #{$gray}, 25%);    
     --global-text-color                 : #{$dark-gray};

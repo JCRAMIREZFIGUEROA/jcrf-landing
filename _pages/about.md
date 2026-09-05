@@ -2,7 +2,7 @@
 permalink: /
 title: "Juan Carlos Ramirez Figueroa"
 author_profile: true
-show_blog_feed: true # Portada = intro corta + el feed del blog debajo, en scroll. Para volver a la portada sin blog, borra esta linea.
+show_blog_feed: false # Se probo portada = intro + feed del blog debajo; no convencio (se sentia forzado). Se puede reactivar desde /admin/ > Paginas > Portada.
 redirect_from:
   - /about/
   - /about.html
